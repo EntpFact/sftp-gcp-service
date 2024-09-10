@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "hbl-poc-enterprisefac-pm-prj",
+  "private_key_id": "0c29c74f5be2b40bd3e70ce6765fd4452aa6cb28",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC13u9YofEzqPIY\nSu3CKRZQUNP0rwiuG4Km2rJ6GS6E+2KGZmvun4RDUAdOfziKNZsjenC9hfDQEmIM\nfxIRNxpFzx1o8Kmj9Yxkm6IVUDBIDQtf7KdefQ4SYiFiU2iwEjJazGw1+k3/XBty\ndYlNONAOBnkENpT35UDSlVEA3icfO9xJQQTdD5LMDg6G0aUY9qsy449l+Z0dRitd\nPdli3627g89tt/5wdYTjZHoqQy5Il9Fwgin/DYwvkL159bK3+HJQdWLVxNgP06uF\nZazyJTXWFBvZcVGtkFDXCjudYaLi6WURxcNNtrs1jCD+LL2sJbY6v3tOy4jj1LQE\nEmOYNyoJAgMBAAECggEABMYaibzMeELrweP7nDBYZ9jLS32psGpD8m3EqAxPqolv\ns1/uXtfckKjB3FdeDFCuZw7AdVUV9lw5KyNNvdpwq9rtJnNEvKtGGWD1bvJJJicD\ngKvVU9db/nMJdcuDMLX1kOkTQRJ2KCkKhmVb6oU+ftPAKvJk1CH2IuDs/KUYKUtt\nORpzH3Zcty5l+ct5+pP+Aisd0e/17OJNiT373eEXA7ziEw8zQdcZ91eb9rlf0ldt\n7cRfK1N+yedeXrOayvF8yjdh07YW1UVSnyd1yb9rBTXJc61kP1CorjTbnChQ4Omv\n0c3g/8Yvx0JTz7g04DnlT3qTlymFSUp6eSGBpIp0tQKBgQD99fuGZdsJ2fDo82rc\nwZjaZKzMkuw9zmUe1asNTh91cK0K6P0Ib6M2n64k95J/cAxD/5Vn8ALQ8URmRx+L\nconYAbtjTwWgU0YM43MZ6Zz3FRBgGl4Tye84MsQKfF2qlVprToA6cGKrpC4pfPtt\nNYJeUj0sF4xGOpScQoxxFBY9hQKBgQC3VMVnj6aATtihjDDoZyUtrgOR97sPfd7w\nscJ59InrAh7cCjbXCyXk/GGS8a6OOSBT7o4L4QiOdwK/bvY5WF1Eq8j8IHxklot6\nUzZBv8SWUBedBXN2VXy2JVQrseYD83DhW72odxB9oAJ40YNfNMiwzpg/2i8CjLZ5\nNsF4VN1vtQKBgBBUXsX3iqwJfXodHMPxFtkEHDBTSil3Of1Pk94ZJeCxTA8liA+g\nzgfXIKVz3dGf7Mn6hyrVvfidat6AuECJLt/azKfIDv6OHDT78wy5fsRMcG8dgusW\n0vD0IrLh6EvtqpC3zXr0ewO6XNWCGdCd3jIea5yILxbc8W1SwiELP5rZAoGAK8ap\nMHZjuqWZItIX55ahkQvJPHScDTHwJyc7GeXjfONPvRkPSUAXN1twbScamElZx9Dh\nyEJeya3vUQjM8JqCAuDGKDYVnes4uOffv8lrxryvNsZTcMEu+0tkkt5y3ySlIprG\nadCsdmLb1D+rD/PJrDZYsn6F1SUGeWEyx2n0SjUCgYEA8DY0vNp3teXDC2KpKdp3\nprXFQ/UcjMJFiwCDI0HeS18RSofnlO+qwXv1nvqHJly6BVnxw8le/yIX5ADocctD\nMy5ud9rQGSVQxJ8D5plIRG4puY7/TI9cXn3Hc5V/iNsUFykgxZ0z63mKnBfEjgoT\nRhx2Up3AHbiMWe5CQ2yC2AA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "il-sftp-test-sa@hbl-poc-enterprisefac-pm-prj.iam.gserviceaccount.com",
+  "client_id": "116612755777114996983",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/il-sftp-test-sa%40hbl-poc-enterprisefac-pm-prj.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -1,0 +1,62 @@
+server:
+  port: ${SERVER_PORT}
+sftp:
+  host: ${SFTP_HOST}
+  port: ${SFTP_PORT}
+  username: ${SFTP_USERNAME}
+  path: ${SFTP_BASE_FOLDER}
+  delay: ${SFTP_DELAY}
+
+logging:
+  level:
+    root: ERROR
+    org:
+      apache:
+        camel: ERROR
+
+
+camel:
+  component:
+    gcs:
+      project-id: {GCP_PROJECT_ID}
+      bucket: {GCP_BUCKET_NAME}
+      bucket.folder: {GCP_BUCKET_FOLDER_PATH}
+  storage:
+      googleStorage: ${GOOGLE_STORAGE_URI}
+
+gcp:
+  projectId: ${GCP_PROJECT_ID}
+  secret:
+    sftpUsername:
+      secretId: ${SFTP_USERNAME_SECRET_NAME}
+      secretVersion: ${SFTP_USERNAME_SECRET_VERSION}
+    sftpSecret:
+      secretId: ${SFTP_PASSWORD_SECRET_NAME}
+      secretVersion: ${SFTP_PASSWORD_SECRET_VERSION}
+    cacheName: ${CACHE_NAME}
+
+file:
+  upload:
+    pubsubname: {SFTP_PUBSUB}
+    topicname:  {TOPIC_NAME}
+  uploader:
+    storage:
+        provider: {STORAGE_PROVIDER}
+
+mail:
+  restURL: {EMAIL_REST_ENDPOINT}
+
+email:
+  config:
+    success:
+      to: {MAIL_SUCCESS_TO}
+      from: {MAIL_SUCCESS_FROM}
+      cc: {MAIL_SUCCESS_CC}
+      bcc: {MAIL_SUCCESS_BCC}
+      status: {MAIL_SUCCESS_STATUS}
+      subject: {MAIL_SUCCESS_SUBJECT}
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+

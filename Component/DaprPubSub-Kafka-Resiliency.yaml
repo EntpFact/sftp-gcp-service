@@ -1,0 +1,21 @@
+apiVersion: dapr.io/v1alpha1
+kind: Resiliency
+metadata:
+  name: inbound-resiliency
+spec:
+  policies:
+    retries:
+      pubsubRetry:
+        policy: constant
+        duration: 30s
+        maxRetries: 5
+      # Global Retry Policy for Inbound Component operations
+      DefaultComponentInboundRetryPolicy:
+        policy: constant
+        duration: 30s
+        maxRetries: 5
+  targets:
+    components:
+      pubsub:
+        inbound:
+          retry: DefaultComponentInboundRetryPolicy

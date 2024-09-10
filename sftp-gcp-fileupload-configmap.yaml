@@ -1,0 +1,44 @@
+# Copyright 2019 HDFC BANK
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sftp-gcp-fileupload-configmap
+
+  SFTP_BASE_FOLDER: "/sftptesting"
+
+  SFTP_HOST: 4.188.92.6
+  SFTP_PORT: 22
+  SFTP_USERNAME: "demo"
+  SFTP_PASSWORD: "demo"
+  SFTP_DELAY: 20000
+
+  SERVER_PORT: 8091
+
+
+
+  GOOGLE_STORAGE_URI: "il-sftp-test?deleteAfterRead=true&includeBody=true"
+
+  GCP_PROJECT_ID: "hbl-poc-enterprisefac-pm-prj"
+  GCP_BUCKET_NAME: "il-sftp-test"
+  GCP_BUCKET_FOLDER_PATH: "sftp-test/"
+
+  SFTP_USERNAME_SECRET_NAME: "hbl-gcp-dev-imps-as1-sftp-username"
+  SFTP_PASSWORD_SECRET_NAME: "sftp-password"
+  SFTP_USERNAME_SECRET_VERSION: "1"
+  SFTP_PASSWORD_SECRET_VERSION: "latest"
+  CACHE_NAME: "SFTPSecretCache"
+
+  SFTP_PUBSUB: il-imps-audit-pubsub
+  TOPIC_NAME: il-sftp-gcp-bucket-metadata
+  STORAGE_PROVIDER: GCP Bucket
+  EMAIL_REST_ENDPOINT: "http://impssmtpdev.hdfcbankuat.com/email"
+
+  MAIL_SUCCESS_FROM: "tushar.shiledar@gmail.com"
+  MAIL_SUCCESS_TO: "tushar.shiledar@gmail.com"
+  MAIL_SUCCESS_CC: ""
+  MAIL_SUCCESS_BCC: ""
+  MAIL_SUCCESS_SUBJECT: "Status - GCP File Upload"
+  MAIL_SUCCESS_STATUS: "Success"
+
+

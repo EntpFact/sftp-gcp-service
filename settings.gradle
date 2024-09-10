@@ -1,0 +1,14 @@
+
+
+dependencyResolutionManagement {
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+    versionCatalogs {
+        libs {
+            from("com.hdfcbank:insulation-layer-catalog-file:1.0")
+        }
+    }
+}
