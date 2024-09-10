@@ -84,7 +84,7 @@ public class SFTPRoute extends RouteBuilder {
                 .handled(true)
                 .to("direct:failure");
 
-                from("file:/C:/input?noop=true")
+                from(sftpUri)
                 .routeId("sftp route")
                 .log("File detected: ${header.CamelFileName}")
 
