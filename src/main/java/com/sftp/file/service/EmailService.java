@@ -48,11 +48,8 @@ public class EmailService {
         log.error("Email body {}",body);
         try {
 
-
 			Email mailBody = setEmailData(body, to, from, cc, bcc, status, subject);
-		
-			log.error("Email body {}1",mailBody);
-            var apiRequest = PostRequest.builder().url(emailRestURL).body(mailBody).responseType(String.class).headers(headers -> headers.add("Authorization", "Bearer token"))
+			var apiRequest = PostRequest.builder().url(emailRestURL).body(mailBody).responseType(String.class).headers(headers -> headers.add("Authorization", "Bearer token"))
 				.build();
 
 			Mono<String> resp = ((Mono<String>) apiClient.execute(apiRequest)).retryWhen(Retry.backoff(1, Duration.ofSeconds(5)));

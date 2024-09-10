@@ -24,17 +24,5 @@ public class GcpBucketUploader extends RouteBuilder {
                 .to("direct:email")
                 .end();
 
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
