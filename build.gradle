@@ -2,8 +2,7 @@ plugins {
 	id 'java'
 	alias(libs.plugins.spring.boot)
 	alias(libs.plugins.spring.dependency.management)
-/*	id 'org.springframework.boot' version '3.2.8'
-	id 'io.spring.dependency-management' version '1.1.6'*/
+
 }
 
 group = 'com.sftp'
@@ -29,33 +28,14 @@ dependencies {
 	implementation group: 'org.apache.camel', name: 'camel-ftp', version: '4.7.0'
 	implementation group: 'org.apache.camel', name: 'camel-google-storage', version: '4.7.0'
 	implementation group: 'com.google.cloud', name: 'google-cloud-storage', version: '2.42.0'
-//	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	implementation libs.dapr.vault.lib
 	implementation 'com.hdfc.ef:secret-manager:0.0.1'
 	implementation libs.api.connect
 	implementation 'org.apache.camel:camel-stringtemplate:4.7.0'
 
-	//implementation 'org.springframework.kafka:spring-kafka'
-//	implementation 'com.fasterxml.jackson.core:jackson-databind'
-//	implementation 'io.dapr:dapr-sdk:1.12.0-rc-1'
-//	implementation 'org.springframework.boot:spring-boot-starter-aop'
-//	implementation 'org.springframework.boot:spring-boot-starter-json'
-	/*compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'*/
-/*	implementation libs.il.outward.common.lib
-	implementation libs.dapr.vault.lib*/
 	compileOnly libs.project.lombok
 	annotationProcessor libs.project.lombok
-
-
 	implementation libs.message.connect
-//	implementation libs.spring.boot.starter.webflux
-/*	implementation libs.springdoc.openapi.webflux.core
-	implementation libs.springdoc.openapi.webflux.api*/
-
-
 }
 
-/*tasks.named('test') {
-	useJUnitPlatform()
-}*/
+
