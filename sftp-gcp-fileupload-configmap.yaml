@@ -12,6 +12,7 @@ metadata:
   SFTP_USERNAME: "demo"
   SFTP_PASSWORD: "demo"
   SFTP_DELAY: 20000
+  SFTP_KEYFILE_PATH: "src/main/resources/sftp.pem"
 
   SERVER_PORT: 8091
 
@@ -27,7 +28,9 @@ metadata:
   SFTP_PASSWORD_SECRET_NAME: "sftp-password"
   SFTP_USERNAME_SECRET_VERSION: "1"
   SFTP_PASSWORD_SECRET_VERSION: "latest"
-  CACHE_NAME: "SFTPSecretCache"
+  SFTP_PRIVATE_KEY_SECRET_NAME: "hbl-gcp-dev-imps-as1-sftp-private-key"
+  SFTP_PRIVATE_KEY_SECRET_VERSION: "3"
+  CACHE_NAME: "SFTPGCPSecretCache"
 
   SFTP_PUBSUB: il-imps-audit-pubsub
   TOPIC_NAME: il-sftp-gcp-bucket-metadata

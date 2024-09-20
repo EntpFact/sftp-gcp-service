@@ -4,8 +4,10 @@ sftp:
   host: ${SFTP_HOST}
   port: ${SFTP_PORT}
   username: ${SFTP_USERNAME}
+
   path: ${SFTP_BASE_FOLDER}
   delay: ${SFTP_DELAY}
+  keyFilePath: ${SFTP_KEYFILE_PATH}
 
 logging:
   level:
@@ -33,6 +35,9 @@ gcp:
     sftpSecret:
       secretId: ${SFTP_PASSWORD_SECRET_NAME}
       secretVersion: ${SFTP_PASSWORD_SECRET_VERSION}
+    sftpPrivateKey:
+      secretId: ${SFTP_PRIVATE_KEY_SECRET_NAME}
+      secretVersion: ${SFTP_PRIVATE_KEY_SECRET_VERSION}
     cacheName: ${CACHE_NAME}
 
 file:

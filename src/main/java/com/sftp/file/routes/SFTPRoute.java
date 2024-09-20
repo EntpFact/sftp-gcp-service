@@ -1,14 +1,12 @@
 package com.sftp.file.routes;
 
 import com.sftp.file.processor.FileMetaDataProcessor;
-import com.sftp.file.service.EmailService;
 import com.sftp.file.service.GCPBucketService;
-import com.sftp.file.util.SecretManagerUtil;
+import com.sftp.file.service.SecretManagerService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.camel.Exchange;
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.component.google.storage.GoogleCloudStorageConstants;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
@@ -58,26 +56,29 @@ public class SFTPRoute extends RouteBuilder {
     private String secretUserName;
 
     @Value("${gcp.secret.sftpUsername.secretVersion}")
-    private int secretVersionForUserName;
+    private String secretVersionForUserName;
 
+    @Value("${sftp.keyFilePath}")
+    private String keyFilePath;
 
-
-
-
+    @Autowired
+    private SecretManagerService service;
 
     @Override
     public void configure() throws Exception {
-       String password= SecretManagerUtil.getSecret(projectId,secretId,secretVersion);
-       String sftpUri = String.format(
-                "sftp://%s@%s:%d%s?delay=%d&password=%s&delete=true",
-                sftpUsername,
+
+       String password= service.getSecret(projectId,secretId,secretVersion);
+        String userName=service.getSftpUsername(projectId,secretUserName,secretVersionForUserName);
+
+        String sftpUri = String.format(
+                "sftp://%s@%s:%d%s?delay=%d&password=%s&privateKeyFile=%s&delete=true",
+                userName,
                 sftpHost,
                 sftpPort,
                 sftpPath,
                 sftpDelay,
-                password
-
-        );
+                password,
+               keyFilePath);
 
         onException(Exception.class)
                 .log(LoggingLevel.ERROR,"Exception occurred: ${exception.printStackTrace()}")
