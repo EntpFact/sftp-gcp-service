@@ -68,7 +68,7 @@ public class SFTPRoute extends RouteBuilder {
         String userName=service.getSftpUsername(projectId,secretUserName,secretVersionForUserName);
 
         String sftpUri = String.format(
-                "sftp://%s@%s:%d%s?delay=%d&password=%s&privateKeyFile=%s&delete=true",
+                "sftp://%s@%s:%d%s?delay=%d&password=%s&privateKeyFile=%s&strictHostKeyChecking=no&useUserKnownHostsFile=false&passiveMode=false&delete=true",
                 userName,
                 sftpHost,
                 sftpPort,
