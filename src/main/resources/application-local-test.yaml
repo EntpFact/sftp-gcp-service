@@ -1,0 +1,60 @@
+camel:
+  component:
+    gcs:
+      bucket: il-sftp-test
+      bucket-folder: sftp-test/
+      project-id: hbl-poc-enterprisefac-pm-prj
+  storage:
+    googleStorage: "il-sftp-test?serviceAccountKey=file:/C:/IL Workspace/file-upload-service/file-upload/src/main/resources/hbl-poc-enterprisefac-pm-prj-12f874e47a8c.json"
+email:
+  config:
+    success:
+      bcc: '""'
+      cc: '""'
+      from: tushar.shiledar@gmail.com
+      status: Success
+      subject: Status - GCP File Upload
+      to: tushar.shiledar@gmail.com
+      flag: true
+file:
+  upload:
+    pubsubname: il-imps-audit-pubsub
+    topicname: il-sftp-gcp-bucket-metadata
+  uploader:
+    storage:
+      provider: GCP Bucket
+gcp:
+  projectId: hbl-poc-enterprisefac-pm-prj
+  secret:
+    cacheName: SFTPSecretCache
+    sftpSecret:
+      secretId: sftp-password
+      secretVersion: latest
+    sftpUsername:
+      secretId: hbl-gcp-dev-imps-as1-sftp-username
+      secretVersion: 1
+logging:
+  level:
+    org:
+      apache:
+        camel: ERROR
+    root: ERROR
+mail:
+  restURL: http://localhost:10013/email
+server:
+  port: 8091
+sftp:
+  delay: 20000
+  host: 4.188.92.6
+  keyFilePath: '"src/resources/application.properties"'
+
+  path: /sftptesting
+  port: 22
+
+  username: demo
+spring:
+  application:
+    name: sftp-gcp-fileupload
+  main:
+    allow-bean-definition-overriding: true
+

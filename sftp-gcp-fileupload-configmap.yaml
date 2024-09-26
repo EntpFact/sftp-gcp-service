@@ -43,5 +43,6 @@ metadata:
   MAIL_SUCCESS_BCC: ""
   MAIL_SUCCESS_SUBJECT: "Status - GCP File Upload"
   MAIL_SUCCESS_STATUS: "Success"
+  EMAIL_SERVICE_FLAG: false
 
 

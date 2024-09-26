@@ -28,16 +28,10 @@ public class SFTPRoute extends RouteBuilder {
     @Value("${sftp.username}")
     private String sftpUsername;
 
-    @Value("${sftp.password}")
-    private String sftpPassword;
-
     @Value("${sftp.delay}")
     private long sftpDelay;
 
-    @Value("${sftp.targetpath}")
-    private String sftpTargetPath;
-
-    @Value("${camel.component.gcs.bucket.folder}")
+    @Value("${camel.component.gcs.bucket-folder}")
     private String gcpTargetPath;
 
     @Value("${camel.component.gcs.bucket}")
@@ -61,13 +55,16 @@ public class SFTPRoute extends RouteBuilder {
     @Value("${sftp.keyFilePath}")
     private String keyFilePath;
 
+    @Value("${email.config.success.flag}")
+    private boolean emailSend;
+
     @Autowired
     private SecretManagerService service;
 
     @Override
     public void configure() throws Exception {
 
-       String password= service.getSecret(projectId,secretId,secretVersion);
+        String password= service.getSecret(projectId,secretId,secretVersion);
         String userName=service.getSftpUsername(projectId,secretUserName,secretVersionForUserName);
 
         String sftpUri = String.format(
@@ -85,10 +82,10 @@ public class SFTPRoute extends RouteBuilder {
                 .handled(true)
                 .to("direct:failure");
 
-                from(sftpUri)
+                 from(sftpUri)
+                 .setHeader("emailFlag",constant(emailSend))
                 .routeId("sftp route")
                 .log("File detected: ${header.CamelFileName}")
-
                 .process(new FileMetaDataProcessor(bucketName,gcpTargetPath))
                 .to("direct:gcpRoute").log("File uploaded to GCS successfully")
                 .bean(GCPBucketService.class,"pushFileMetadata")

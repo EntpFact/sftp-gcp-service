@@ -15,13 +15,18 @@ public class GcpBucketUploader extends RouteBuilder {
                 .log(LoggingLevel.ERROR,"in the gcp route")
                 .doTry()
                 .to("google-storage://{{camel.storage.googleStorage}}")
-                //.to("google-storage://{{camel.component.gcs.bucket}}?serviceAccountKey=file:/C:/Users/TUSHAR/Downloads/hbl-poc-enterprisefac-pm-prj-0c29c74f5be2.json")
+              //  .to("google-storage://{{camel.component.gcs.bucket}}?serviceAccountKey=file:/C:/Users/TUSHAR/Downloads/hbl-poc-enterprisefac-pm-prj-0c29c74f5be2.json")
                 .setHeader("completionStatus", constant("success"))
                 .doCatch(Exception.class)
                 .log(LoggingLevel.ERROR, "Error occurred: ${exception.message}")
                 .setHeader("completionStatus", constant("failure"))
                 .doFinally()
+                .log(LoggingLevel.ERROR, String.valueOf(simple("${header.emailFlag}")))
+                .choice()
+                .when(simple("${header.emailFlag} == 'true'"))
                 .to("direct:email")
+                .otherwise()
+                .log("Email flag is not set to true, skipping email route.")
                 .end();
 
     }

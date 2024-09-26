@@ -20,9 +20,9 @@ logging:
 camel:
   component:
     gcs:
-      project-id: {GCP_PROJECT_ID}
-      bucket: {GCP_BUCKET_NAME}
-      bucket.folder: {GCP_BUCKET_FOLDER_PATH}
+      project-id: ${GCP_PROJECT_ID}
+      bucket: ${GCP_BUCKET_NAME}
+      bucket-folder: ${GCP_BUCKET_FOLDER_PATH}
   storage:
       googleStorage: ${GOOGLE_STORAGE_URI}
 
@@ -42,24 +42,25 @@ gcp:
 
 file:
   upload:
-    pubsubname: {SFTP_PUBSUB}
-    topicname:  {TOPIC_NAME}
+    pubsubname: ${SFTP_PUBSUB}
+    topicname:  ${TOPIC_NAME}
   uploader:
     storage:
-        provider: {STORAGE_PROVIDER}
+        provider: ${STORAGE_PROVIDER}
 
 mail:
-  restURL: {EMAIL_REST_ENDPOINT}
+  restURL: ${EMAIL_REST_ENDPOINT}
 
 email:
   config:
     success:
-      to: {MAIL_SUCCESS_TO}
-      from: {MAIL_SUCCESS_FROM}
-      cc: {MAIL_SUCCESS_CC}
-      bcc: {MAIL_SUCCESS_BCC}
-      status: {MAIL_SUCCESS_STATUS}
-      subject: {MAIL_SUCCESS_SUBJECT}
+      to: ${MAIL_SUCCESS_TO}
+      from: ${MAIL_SUCCESS_FROM}
+      cc: ${MAIL_SUCCESS_CC}
+      bcc: ${MAIL_SUCCESS_BCC}
+      status: ${MAIL_SUCCESS_STATUS}
+      subject: ${MAIL_SUCCESS_SUBJECT}
+      flag: ${EMAIL_SERVICE_FLAG}
 
 spring:
   main:
