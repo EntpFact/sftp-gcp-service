@@ -33,9 +33,17 @@ dependencies {
 	implementation libs.api.connect
 	implementation 'org.apache.camel:camel-stringtemplate:4.7.0'
 
+	testImplementation 'org.apache.camel:camel-test-spring-junit5:4.8.0'
+
 	compileOnly libs.project.lombok
 	annotationProcessor libs.project.lombok
 	implementation libs.message.connect
 }
 
+test {
+	useJUnitPlatform()
+	testLogging {
+		events "started", "passed", "skipped", "failed"
+	}
+}
 
