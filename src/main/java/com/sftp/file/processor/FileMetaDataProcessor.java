@@ -31,5 +31,9 @@ public class FileMetaDataProcessor implements Processor {
         exchange.getIn().setHeader(GoogleCloudStorageConstants.OBJECT_NAME, gcpTargetPath + fileName);
         exchange.getIn().setHeader(GoogleCloudStorageConstants.BUCKET_NAME,bucketName);
         exchange.getIn().setHeader(GoogleCloudStorageConstants.FILE_NAME,fileName);
+        long currentTimestamp = System.currentTimeMillis();
+        java.util.Date date = new java.util.Date(currentTimestamp);
+        String formattedDate = new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(date);
+        exchange.getIn().setHeader(GoogleCloudStorageConstants.METADATA_CREATE_TIME,formattedDate);
     }
 }

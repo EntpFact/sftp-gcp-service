@@ -3,7 +3,6 @@ package com.sftp.file.controller;
 
 import com.sftp.file.service.GCPBucketService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.camel.Exchange;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +12,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/sftp")
 @Slf4j
-public class SFTPTestController {
+public class SFTPController {
 
     @Autowired
     private GCPBucketService gcpBucketService;

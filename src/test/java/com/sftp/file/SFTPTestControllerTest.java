@@ -1,6 +1,6 @@
 package com.sftp.file;
 
-import com.sftp.file.controller.SFTPTestController;
+import com.sftp.file.controller.SFTPController;
 import com.sftp.file.processor.FileMetaDataProcessor;
 import com.sftp.file.routes.SFTPRoute;
 import com.sftp.file.service.EmailService;
@@ -49,7 +49,7 @@ public class SFTPTestControllerTest {
     private SFTPRoute sftpRoute;
     private MockMvc mockMvc;
     @InjectMocks
-    private SFTPTestController sftpTestController;
+    private SFTPController sftpTestController;
 
     @BeforeEach
     public void setUp() {

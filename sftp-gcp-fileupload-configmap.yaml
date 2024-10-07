@@ -39,10 +39,11 @@ metadata:
 
   MAIL_SUCCESS_FROM: "tushar.shiledar@gmail.com"
   MAIL_SUCCESS_TO: "tushar.shiledar@gmail.com"
-  MAIL_SUCCESS_CC: ""
+  MAIL_SUCCESS_CC: "tushar.shiledar@gmail,shiledartushar@gmail.com"
   MAIL_SUCCESS_BCC: ""
-  MAIL_SUCCESS_SUBJECT: "Status - GCP File Upload"
+  MAIL_SUCCESS_SUBJECT: "IMPS TCC & RET Adjustment reports upload"
   MAIL_SUCCESS_STATUS: "Success"
-  EMAIL_SERVICE_FLAG: false
+  EMAIL_SERVICE_FLAG: true
+  REACH-OUT_EMAIL_LIST: "tushar.shiledar@gmail.com,shiledartushar@gmail.com"
 
 
