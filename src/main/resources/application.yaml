@@ -61,7 +61,7 @@ email:
       status: ${MAIL_SUCCESS_STATUS}
       subject: ${MAIL_SUCCESS_SUBJECT}
       flag: ${EMAIL_SERVICE_FLAG}
-      reachOutEmail: ${REACH-OUT_EMAIL_LIST}
+      reachOutEmail: ${REACHOUT_EMAIL_LIST}
 
 spring:
   main:

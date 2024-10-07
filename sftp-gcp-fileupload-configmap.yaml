@@ -44,6 +44,6 @@ metadata:
   MAIL_SUCCESS_SUBJECT: "IMPS TCC & RET Adjustment reports upload"
   MAIL_SUCCESS_STATUS: "Success"
   EMAIL_SERVICE_FLAG: true
-  REACH-OUT_EMAIL_LIST: "tushar.shiledar@gmail.com,shiledartushar@gmail.com"
+  REACHOUT_EMAIL_LIST: "tushar.shiledar@gmail.com,shiledartushar@gmail.com"
 
 
