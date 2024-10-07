@@ -43,6 +43,9 @@ public class EmailService {
 	@Value("${email.config.success.subject}")
 	private String subject;
 
+	@Value("${email.config.success.reachOutEmail}")
+	private String reachOutEmailList;
+
 
 	public void sendEmail(String body,String to,String from, String cc, String bcc, String status, String subject) throws Exception {
         log.error("Email body {}",body);
@@ -79,8 +82,10 @@ public class EmailService {
 		exchange.getIn().setHeader("from-address",from);
 		exchange.getIn().setHeader("cc",cc);
 		exchange.getIn().setHeader("bcc",bcc);
-		exchange.getIn().setHeader("status",status);
+		String completionStatus = exchange.getIn().getHeader("completionStatus", String.class);
+		exchange.getIn().setHeader("subject",completionStatus + " - "+ subject);
 		exchange.getIn().setHeader("subject",subject);
+		exchange.getIn().setHeader("reachOutEmailList",reachOutEmailList);
 	}
 
 }

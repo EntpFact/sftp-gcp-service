@@ -5,7 +5,9 @@ import org.apache.camel.Processor;
 import org.apache.camel.component.google.storage.GoogleCloudStorageConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class FileMetaDataProcessor implements Processor {
 
@@ -31,5 +33,9 @@ public class FileMetaDataProcessor implements Processor {
         exchange.getIn().setHeader(GoogleCloudStorageConstants.OBJECT_NAME, gcpTargetPath + fileName);
         exchange.getIn().setHeader(GoogleCloudStorageConstants.BUCKET_NAME,bucketName);
         exchange.getIn().setHeader(GoogleCloudStorageConstants.FILE_NAME,fileName);
+        long currentTimestamp = System.currentTimeMillis();
+        Date date = new Date(currentTimestamp);
+        String formattedDate = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(date);
+        exchange.getIn().setHeader(GoogleCloudStorageConstants.METADATA_CREATE_TIME,formattedDate);
     }
 }

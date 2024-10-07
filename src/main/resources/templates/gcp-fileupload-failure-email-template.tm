@@ -1,13 +1,9 @@
-Dear Operations Team,
+Dear Operation team,
+The IMPS TCC & RET Adjustment reports placed on GCP bucket path <headers.CamelGoogleCloudStorageObjectName> on <headers.CamelGoogleCloudStorageCreateTime> is not uploaded.
 
-Please find the following details about the file which is processed
+Root cause: Exception while uploading file to GCP bucket path
+Please reach out to below email id for support
+<headers.reachOutEmailList>
 
-FileDirectory : <headers.CamelGoogleCloudStorageObjectName>
-BucketName :    <headers.CamelGoogleCloudStorageBucketName>
-FileName:       <headers.CamelFileName>
-Status: Failure
-
-In case of issues in accessing these files please reach out to
-
-Regards
-Team IMPS
+Regards,
+Team Shikhar COE

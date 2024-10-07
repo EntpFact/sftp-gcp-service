@@ -1,13 +1,8 @@
-Dear Operations Team,
+Dear Operation team,
+The IMPS TCC & RET Adjustment reports placed on GCP bucket path <headers.CamelGoogleCloudStorageObjectName> on <headers.CamelGoogleCloudStorageCreateTime> has been uploaded successfully.
 
-Please find the following details about the file which is processed
+In case of any issues please reach out to the below email ids for support
+<headers.reachOutEmailList>
 
-FileDirectory : <headers.CamelGoogleCloudStorageObjectName>
-BucketName :    <headers.CamelGoogleCloudStorageBucketName>
-FileName:       <headers.CamelFileName>
-Status: Success
-
-In case of issues in accessing these files please reach out to
-
-Regards
-Team IMPS
+Regards,
+Team Shikhar COE
